@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Test</title>
+</head>
+<body>
+<audio id="mainaud" onloadeddata="onAudioLoad()">
+    <source id="aud_ct_win_" src="../audio/counter_terrorist_wi.mp3" type="audio/mp3">
+    <source id="aud_bomb_plant" src="../audio/csgo_bomb_plant.mp3" type="audio/mp3">
+    <source id="aud_t_win" src="../audio/terrorist_win.mp3" type="audio/mp3">
+    <source id="aud_bomb_planting" src="../audio/gsgo_bomb.mp3" type="audio/mp3">
+</audio>
+
+<button id="tbn">Click</button>
+
+<script>
+    let d = false;
+    function onAudioLoad() {
+        d = true;
+    }
+
+    window.addEventListener("load" , function () {
+        document.getElementById("tbn").addEventListener("click", function () {
+            onClick()
+        })
+    })
+
+    function onClick() {
+        document.getElementById("mainaud").play();
+    }
+</script>
+</body>
+</html>

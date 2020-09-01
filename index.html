@@ -1,0 +1,157 @@
+<!--
+
+FILLED WITH BOILERPLATE alert
+
+    List of possible commands:
+        cd  - change directory
+        dir - list directory
+
+    Download Firefox!
+
+    This code is completely breakable because I took no steps no make sure not to. This was a fun project for a portfolio
+    website, for which the design came straight from my mind. This is of course a fake command-line and hence doesn't do
+    much. All the commands are fake and don't have any actual processing done behind the scenes. The network delays are
+    simulated with JS.
+
+    This code is probably quite easily breakable since no server-side code was designed to prevent it.
+
+    This code isn't copyrighted. Not sure if I fully understand what that means though. Anyone can take the idea, although
+    I'd really love it if someone gave some credit, I mean, who doesn't like that? ;)
+
+    Even simply refreshing quick enough shows you some of the secrets I've put on this page.
+    This website is filled with easter eggs. And they're all based on the terminal line. All the secrets can be revealed
+    inside /js/index.js. Try to find them out without looking 😉
+
+    There's nothing to hide. If you're reading this from viewsource: or Inspect Element, then this project is available on my Github:
+    https://www.github.com/praantosamadder/about By the way, the git commitments are really confusing even to me (oh, I really
+    should've concentrated on those CS50 classes on git. I'm such a git!😞)
+
+    I really don't think this project will come useful to anyone. I mean, so far it has went unnoticed. Only my friends
+    appreciated my dedication on this. Oh my life is such a waste. (From the back: "loser!").
+
+    Whatever you do, don't go inside index.js. It's so bloated with boilerplate code, makes me ashamed of myself!!!!
+
+    So, yeah that was the end of my JS showoff. You can continue with the demo and if you're already done with that, then
+    I guess TTFN (not from me though, from my Github account. I honestly didn't know you were here.)
+
+-->
+
+
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+
+<head>
+    <title>port</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!--Audio elements-->
+
+<audio id="audTerroristWin">
+    <source type="audio/mp3" src="audio/terrorist_win.mp3">
+</audio>
+
+<audio id="audBombPlanting">
+    <source type="audio/mp3" src="audio/csgo_bomb_plant.mp3">
+</audio>
+
+<audio id="audAwp">
+    <source type="audio/mp3" src="audio/csgo_awp_effect.mp3">
+</audio>
+
+<audio id="audDefusing">
+    <source type="audio/mp3" src="audio/defusing_bomb_csgo.mp3">
+</audio>
+
+<audio id="audCTWin">
+    <source type="audio/mp3" src="audio/counter_terrorist_wi.mp3">
+</audio>
+
+<audio id="audBombPlanted">
+    <source type="audio/mp3" src="audio/gsgo_bomb.mp3">
+</audio>
+
+
+
+<div id="terminal-intro">
+<!--    <div id="stupidest_man_alive" class="terminal-intro-text">-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;############################################################################# <br>-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#########&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###########&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#########&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;################&nbsp;&nbsp;##&nbsp;<br>-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;<br>-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;<br>-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;<br>-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;######&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;<br>-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;<br>-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;<br>-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##########&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;<br>-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;############################################################################# <br><br>-->
+<!--    </div>-->
+
+    <p class="terminal-intro-text" id="terminal-intro-text">
+        Microsoft Windows [Version 10.0.18363.1016]<br><b>
+        (c)</b> 2020 Praanto Samadder. All rights reserved.<br><br>
+
+        <span id="admissions" style="display: inline"></span>
+    </p>
+</div>
+<div id="terminal-line" style="display: inline"></div>
+<input type="text" id="terminal-input" maxlength="50" class="terminal-input" autofocus spellcheck="false">
+
+<div class="you_re-not-welcome" id="you_re-not-welcome">
+    <p style="font-size: 38px; font-family: 'Inter', sans-serif; font-weight: 500;">
+        This webpage was never made with mobile devices in mind.
+    </p>
+
+    <p style="font-size: 20px; font-family: 'Inter', sans-serif; font-weight: 200;
+    margin-right: 40px; margin-left: 40px">
+        Some of the features of this page might not work on a mobile device. If you still
+        wish to continue, please enable Desktop Site from your browser.
+    </p>
+</div>
+
+<script>
+    const getDeviceType = () => {
+        const ua = navigator.userAgent;
+        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+            return "tablet";
+        }
+        if (
+            /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)
+        ) {
+            return "mobile";
+        }
+        return "desktop";
+    };
+
+    if (getDeviceType().toLowerCase() === "desktop") {
+        let date = new Date().toString().split(" ")
+        let currentYear = date[3]
+        let currentMonth = date[1]
+
+        if ((currentMonth.toLowerCase() === "january" || "february" || "march") && currentYear === "2021") {
+            document.getElementById("admissions").innerText = "If you're my admissions officer, then I cordially ask you to hit Ctrl+U or Ctrl+Shift+I on your keyboard. Thanks."
+        }
+
+        // Display initialization elements
+        document.getElementById("terminal-intro").style.visibility = "initial";
+        document.getElementById("terminal-input").style.visibility = "initial";
+
+        // Remove Mobile error
+        document.getElementById("you_re-not-welcome").style.display = "none";
+    } else {
+        // Remove initialization elements
+        document.getElementById("terminal-intro").style.display = "none";
+        document.getElementById("terminal-input").style.display = "none";
+
+        // Display mobile error
+        document.getElementById("you_re-not-welcome").style.display = "initial";
+    }
+
+</script>
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="css/index.css">
+</body>
+</html>

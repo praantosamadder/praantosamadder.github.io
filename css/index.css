@@ -1,0 +1,122 @@
+/* TAGS */
+body {
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+}
+
+/* CLASSES */
+
+.terminal-intro-text {
+    color: white;
+    font-family: Cascadia, monospace;
+    font-size: 15px;
+}
+
+.blink {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-animation: blink 1s step-end infinite;
+    -moz-animation: blink 1s step-end infinite;
+    -o-animation: blink 1s step-end infinite;
+    animation: blink 1s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+    67% { opacity: 0 }
+}
+
+@-moz-keyframes blink {
+    67% { opacity: 0 }
+}
+
+@-o-keyframes blink {
+    67% { opacity: 0 }
+}
+
+@keyframes blink {
+    67% { opacity: 0 }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0 black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #222222;
+    border-radius: 32px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #474747;
+}
+
+.terminal-input {
+    font-size: 15px;
+    width: 65%;
+    border-color: transparent;
+    background-color: black;
+    bottom: 0;
+    padding-left: 0;
+    top: initial;
+    color: white;
+    caret-color: white;
+    caret-shape: bar;
+    font-family: Cascadia, monospace;
+    outline: none;
+}
+
+.terminal-output {
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    font-family: Cascadia, monospace;
+    display: inline;
+}
+
+.dolla-sign {
+    color: white;
+    display: inline;
+    font-family: Cascadia, monospace;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.terminal-input-text {
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    font-family: Cascadia, monospace;
+    display: inline;
+}
+@font-face {
+    font-family: "Cascadia";
+    src: url("../fonts/CascadiaCode.woff2");
+}
+
+.table-data {
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.you_re-not-welcome {
+    color: white;
+    font-family: "Inter", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    margin-right: -50%;
+    user-select: none;
+    transform: translate(-50%, -50%);
+    padding-left: 80px;
+    padding-right: 80px;
+}
