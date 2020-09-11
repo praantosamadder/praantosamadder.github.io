@@ -1,6 +1,8 @@
 function everything() {
     const input = document.getElementById('terminal-input')
 
+    let doskeyList = []
+
     const getDeviceTypeJS = () => {
         const ua = navigator.userAgent;
         if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
@@ -49,6 +51,7 @@ function everything() {
         input.addEventListener("keydown", function (e) {
             if (e.key.toLowerCase() === "enter") {
                 e.preventDefault();
+                doskeyList.push(input.value)
                 validator();
                 input.value = "";
             } else if (e.key.toLowerCase() === "c" && e.ctrlKey){
@@ -1242,7 +1245,7 @@ function everything() {
                 input.focus()
             }, randomNum)
         }
-        
+
         function printDoskey(value, list, dir) {
             let l = document.getElementById(terminalInputTextIdGenerator(iterator))
             l.style.display = "inline";
