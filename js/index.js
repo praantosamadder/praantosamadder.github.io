@@ -60,15 +60,15 @@ function everything() {
 
         function validator() {
 
-            const validURL = (str) => {
-                let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-                    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-                    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-                    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-                    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-                    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-                return !!pattern.test(str);
-            }
+            // const validURL = (str) => {
+            //     let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+            //         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+            //         '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+            //         '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+            //         '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+            //         '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+            //     return !!pattern.test(str);
+            // }
 
             let randomNum = (Math.random() * 4) * 1000;
 
@@ -80,8 +80,9 @@ function everything() {
             
             if (value === "cd") {
                 println(value, currentDirectory, currentDirectory, 0)
-            }
-            else if (value.toLowerCase() === "download firefox"){
+            } else if(value.toLowerCase() === "doskey") {
+                println(value, "", currentDirectory, randomNum)
+            } else if (value.toLowerCase() === "download firefox"){
                 println(value, "~ Ever heard of Chrome before?", currentDirectory, 2000)
                 setTimeout(function () {
                     window.open("https://www.google.com/chrome/")
@@ -231,7 +232,7 @@ function everything() {
                     } case "index.js" : {
                         if (currentDirectory === "praantosamadder.github.io/js ") {
                             println(value, "", currentDirectory, randomNum)
-                            window.open("https://raw.githubusercontent.com/praantosamadder/about/master/js/index.js")
+                            window.open("https://raw.githubusercontent.com/praantosamadder/praantosamadder.github.io/master/js/index.js")
                         } else {
                             println(value, "\'index.js\. was not recognized", currentDirectory, randomNum)
                         }
@@ -372,6 +373,17 @@ function everything() {
                             println(value, "", currentDirectory, 4000)
                         } else {
                             println(value, "", currentDirectory, randomNum)
+                        }
+                        break
+                    } case "doskey": {
+                        switch (argumentSplit[1].toLowerCase()){
+                            case "/history": {
+                                printDoskey(value, doskeyList, currentDirectory)
+                                break
+                            } default: {
+                                println(value, "", currentDirectory, randomNum)
+                                break
+                            }
                         }
                         break
                     } case "defuse": {
@@ -1204,6 +1216,71 @@ function everything() {
                 table.append(tableRow1, tableRow2, tableRow3, tableRow4, tableRow5, tableRow6)
 
                 p2.appendChild(table)
+
+                iterator = iterator + 1
+
+                let p9035 = document.createElement("p");
+                p9035.className = "dolla-sign";
+                p9035.appendChild(document.createTextNode(dir + "> "))
+                p9035.id = dollaSignIdGenerator(iterator);
+                divTagTerminalLine.appendChild(p9035);
+
+                let p4 = document.createElement("p")
+                p4.className = "terminal-input-text";
+                p4.id = terminalInputTextIdGenerator(iterator);
+                p4.appendChild(document.createTextNode(""));
+                p4.style.display = "inline"
+                divTagTerminalLine.appendChild(p4);
+
+                let p5 = document.createElement("p");
+                p5.className = "terminal-input-text";
+                p5.id = terminalOutputIdGenerator(iterator);
+                p5.appendChild(document.createTextNode(""));
+                p5.style.display = "inline"
+                divTagTerminalLine.appendChild(p5);
+                input.disabled = false;
+                input.focus()
+            }, randomNum)
+        }
+        
+        function printDoskey(value, list, dir) {
+            let l = document.getElementById(terminalInputTextIdGenerator(iterator))
+            l.style.display = "inline";
+            let msg1 = document.createTextNode(value);
+            l.appendChild(msg1);
+
+            let p2 = document.getElementById(terminalOutputIdGenerator(iterator))
+            p2.style.display = "block";
+
+            let randomNum = (Math.random() * 4) * 1000;
+            setTimeout(function () {
+
+                // let date = new Date().toString().split(" ")
+                // let currentTime = date[4]
+                // let currentDate = date[2] + "-" + date[1] + "-" + date[3]
+
+                let table = document.createElement("table")
+                // let tableRow1 = document.createElement("tr")
+
+                // let dirDet = document.createElement("p")
+                // dirDet.appendChild(document.createTextNode("Directory of praantosamadder.github.io/audio"))
+
+                for (itemIndex in list ){
+                    let tableRow = document.createElement("tr")
+                    addTableData(tableRow, list[itemIndex])
+                    table.appendChild(tableRow)
+                }
+
+                // addTableData(tableRow1, currentDate)
+                // addTableData(tableRow1, currentTime)
+                // addTableData(tableRow1, "<DIR>")
+                // addTableData(tableRow1, "")
+                // addTableData(tableRow1, ".")
+
+               
+                // table.append(tableRow1, tableRow2, tableRow3, tableRow4, tableRow5, tableRow6);
+
+                p2.append(table)
 
                 iterator = iterator + 1
 
