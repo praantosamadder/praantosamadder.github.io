@@ -235,6 +235,14 @@ function everything() {
                             println(value, "\'index.html\. was not recognized", currentDirectory, randomNum)
                         }
                         break
+                    } case "favicon.jpg": {
+                        if (currentDirectory === "praantosamadder.github.io/about ") {
+                            println(value, "", currentDirectory, randomNum)
+                            window.open("https://raw.githubusercontent.com/praantosamadder/praantosamadder.github.io/master/favicon.jpg")
+                        } else {
+                            println(value, "\'favicon.jpg\. was not recognized", currentDirectory, randomNum)
+                        }
+                        break
                     } case "index.js" : {
                         if (currentDirectory === "praantosamadder.github.io/js ") {
                             println(value, "", currentDirectory, randomNum)
@@ -566,6 +574,13 @@ function everything() {
                 addTableData(tableRow3, "<DIR>")
                 addTableData(tableRow3, "")
                 addTableData(tableRow3, "css")
+                
+                let fontTableRow = document.createElement("tr");
+                addTableData(fontTableRow, currentDate)
+                addTableData(fontTableRow, currentTime)
+                addTableData(fontTableRow, "")
+                addTableData(fontTableRow, "21,732")
+                addTableData(fontTableRow, "favicon.jpg")
 
                 let tableRow4 = document.createElement("tr");
                 addTableData(tableRow4, currentDate)
@@ -605,7 +620,7 @@ function everything() {
                 addTableData(tableRowM, "audio")
 
 
-                table.append(tableRow1, tableRow2, tableRowM, tableRow3, tableRow5, tableRow6, tableRow4, tableRow7)
+                table.append(tableRow1, tableRow2, tableRow3, fontTableRow, tableRow5, tableRow6, tableRow4, tableRow7)
 
                 p2.append(dirDet, table)
 
