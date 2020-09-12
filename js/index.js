@@ -20,7 +20,6 @@ function everything() {
 
     if (getDeviceTypeJS().toLowerCase() === "desktop") {
 
-// CONSTANTS
         const usage = "  Usage: port <command><br><br>where <command> is one of:" +
             "<br>[list-projects, view-details, help]";
 
@@ -67,57 +66,63 @@ function everything() {
 
             input.disabled = true;
 
-            let value = input.value
+            // <summary>
+            // value is printed on screen and is case-sensitive
+            // v1 is not printed on screen and is not case-sensitive. v1 is used for argument checking 
+            // </summary>
 
-            const argumentSplit = value.split(" ")
+            let value = input.value
+            let v1 = value.toLowerCase()
+
+            const argumentSplit = v1.split(" ")
             
-            if (value.toLowerCase() === "cd") {
+            if (v1 === "cd") {
                 println(value, currentDirectory, currentDirectory, 0)
-            } else if (value.toLowerCase() === "exit"){
+            } else if (v1 === "exit"){
                 window.close()
-            } else if(value.toLowerCase() === "doskey") {
+            } else if(v1 === "doskey") {
                 println(value, "", currentDirectory, randomNum)
-            } else if (value.toLowerCase() === "download firefox"){
+            } else if (v1 === "download firefox"){
                 println(value, "~ Ever heard of Chrome before?", currentDirectory, 2000)
                 setTimeout(function () {
                     window.open("https://www.google.com/chrome/")
                 }, 4000)
-            } else if (value.toLowerCase() === "npm install xterm") {
+            } else if (v1 === "npm install xterm") {
                 println(value, "~ I tried doing that. Worked on my Windows machine. Didn't work here.", currentDirectory, randomNum)
-            } else if (value.toLowerCase() === "pmsl") {
+            } else if (v1 === "pmsl") {
                 println(value, "~ Don't worry. That plan is still active. " +
                     "PUBG Mobile School League is still gonna happen!!", currentDirectory, randomNum)
-            } else if (value.toLowerCase() === "oxford international school") {
+            } else if (v1 === "oxford international school") {
                 println("🤐", "", currentDirectory, randomNum)
-            } else if (value.toLowerCase() === "harvard university") {
+            } else if (v1 === "harvard university") {
                 println(value, "~ Please take me in!😍😍", currentDirectory, 0)
 
-            } else if (value.toLowerCase() === "harvard") {
+            } else if (v1 === "harvard") {
                 println(value, "~ Psst. This website was made keeping \"Impress Harvard\" in mind.", currentDirectory, 0)
 
-            } else if (value.toLowerCase() === "massachusetts institute of technology") {
+            } else if (v1 === "massachusetts institute of technology") {
                 println(value, "~ Looking for a geek? Well, count me in!😍😍", currentDirectory, 0)
 
-            } else if (value.toLowerCase() === "mit") {
+            } else if (v1 === "mit") {
                 println(value, "~ Please take me in!😍😍", currentDirectory, 0)
 
-            } else if (value.toLowerCase() === "google inc") {
+            } else if (v1 === "google inc") {
                 println(value, "~ Yeah I'd love working there.😍😍", currentDirectory, 0)
 
-            } else if (value.toLowerCase() === "google") {
+            } else if (v1 === "google") {
                 println(value, "~ Allow me, my good sir/ma'am", currentDirectory, 1000)
                 window.open("https://google.com")
 
-            } else if (value.toLowerCase() === "email") {
+            } else if (v1 === "email") {
                 println(value, "My email: praantox.samadder@gmail.com", currentDirectory, 1000)
                 window.open("mailto:praantoxsamadder@gmail.com")
 
             } else {
-                switch (argumentSplit[0].toLowerCase()) {
+                switch (argumentSplit[0]) {
                     case "port": {
-                        if (typeof argumentSplit[1] === "string") {
-                            argumentSplit[1] = argumentSplit[1].toLowerCase()
-                        }
+                        // if (typeof argumentSplit[1] === "string") {
+                        //     argumentSplit[1] = argumentSplit[1].toLowerCase()
+                        // } // check done because toLowerCase cannot be called on type UNDEFINED
                         switch (argumentSplit[1]) {
                             case "help": {
                                 println(value, helpString, currentDirectory, randomNum);
@@ -133,6 +138,9 @@ function everything() {
                                 println(value, usage, currentDirectory, randomNum)
                                 break
                             } case "view-details": {
+                                // if (typeof argumentSplit[2] === "string") {
+                                //     argumentSplit[2] = argumentSplit[2].toLowerCase()
+                                // }
                                 switch (argumentSplit[2]) {
                                     case "school": {
                                         println(value, "~ Oxford International School", currentDirectory, randomNum)
@@ -184,11 +192,11 @@ function everything() {
                         }
                         break
                     } case "cd": {
-                        if (argumentSplit[1].toLowerCase() === "js" && currentDirectory === "praantosamadder.github.io/about ") {
+                        if (argumentSplit[1] === "js" && currentDirectory === "praantosamadder.github.io/about ") {
                             currentDirectory = currentDirectory.replace("about ", "") + "js "
                             println(value, "", currentDirectory, randomNum)
                             break
-                        } else if (argumentSplit[1].toLowerCase() === "css" && currentDirectory === "praantosamadder.github.io/about ") {
+                        } else if (argumentSplit[1] === "css" && currentDirectory === "praantosamadder.github.io/about ") {
                             currentDirectory = currentDirectory.replace("about ", "") + "css "
                             println(value, "", currentDirectory, randomNum)
                             break
@@ -196,15 +204,15 @@ function everything() {
                             currentDirectory = "praantosamadder.github.io/about "
                             println(value, "", currentDirectory, randomNum)
                             break
-                        } else if (argumentSplit[1].toLowerCase() === "test" && currentDirectory === "praantosamadder.github.io/about ") {
+                        } else if (argumentSplit[1] === "test" && currentDirectory === "praantosamadder.github.io/about ") {
                             currentDirectory = currentDirectory.replace("about ", "") + "test "
                             println(value, "", currentDirectory, randomNum)
                             break;
-                        } else if (argumentSplit[1].toLowerCase() === "audio" && currentDirectory === "praantosamadder.github.io/about ") {
+                        } else if (argumentSplit[1] === "audio" && currentDirectory === "praantosamadder.github.io/about ") {
                             currentDirectory = currentDirectory.replace("about ", "") + "audio "
                             println(value, "", currentDirectory, randomNum)
                             break;
-                        } else if (argumentSplit[1].toLowerCase() === "fonts" && currentDirectory === "praantosamadder.github.io/about ") {
+                        } else if (argumentSplit[1] === "fonts" && currentDirectory === "praantosamadder.github.io/about ") {
                             currentDirectory = currentDirectory.replace("about ", "") + "fonts "
                             println(value, "", currentDirectory, randomNum)
                             break;
@@ -222,7 +230,7 @@ function everything() {
                     } case "index.html": {
                         if (currentDirectory === "praantosamadder.github.io/about ") {
                             println(value, "", currentDirectory, randomNum)
-                            window.open("https://raw.githubusercontent.com/praantosamadder/about/master/index.html")
+                            window.open("https://raw.githubusercontent.com/praantosamadder/praantosamadder.github.io/master/index.html")
                         } else {
                             println(value, "\'index.html\. was not recognized", currentDirectory, randomNum)
                         }
@@ -238,7 +246,15 @@ function everything() {
                     } case "center.html": {
                         if (currentDirectory === "praantosamadder.github.io/test ") {
                             println(value, "", currentDirectory, randomNum)
-                            window.open("https://raw.githubusercontent.com/praantosamadder/about/master/test/center.html")
+                            window.open("https://raw.githubusercontent.com/praantosamadder/praantosamadder.github.io/master/test/center.html")
+                        } else {
+                            println(value, "\'center.html\. was not recognized", currentDirectory, randomNum)
+                        }
+                        break;
+                    } case "audio.html": {
+                        if (currentDirectory === "praantosamadder.github.io/test ") {
+                            println(value, "", currentDirectory, randomNum)
+                            window.open("https://raw.githubusercontent.com/praantosamadder/praantosamadder.github.io/master/test/audio.html")
                         } else {
                             println(value, "\'center.html\. was not recognized", currentDirectory, randomNum)
                         }
@@ -274,7 +290,7 @@ function everything() {
                     } case "table.html": {
                         if (currentDirectory === "praantosamadder.github.io/test ") {
                             println(value, "", currentDirectory, randomNum)
-                            window.open("https://raw.githubusercontent.com/praantosamadder/about/master/test/table.html")
+                            window.open("https://raw.githubusercontent.com/praantosamadder/praantosamadder.github.io/master/test/table.html")
                         } else {
                             println(value, "\'table.html\. was not recognized", currentDirectory, randomNum)
                         }
@@ -282,7 +298,7 @@ function everything() {
                     } case "index.css" : {
                         if (currentDirectory === "praantosamadder.github.io/css ") {
                             println(value, "", currentDirectory, randomNum)
-                            window.open("https://raw.githubusercontent.com/praantosamadder/about/master/css/index.css")
+                            window.open("https://raw.githubusercontent.com/praantosamadder/praantosamadder.github.io/master/css/index.css")
                         } else {
                             println(value, "\'index.css\. was not recognized", currentDirectory, randomNum)
                         }
@@ -374,7 +390,7 @@ function everything() {
                         }
                         break
                     } case "doskey": {
-                        switch (argumentSplit[1].toLowerCase()){
+                        switch (argumentSplit[1]){
                             case "/history": {
                                 printDoskey(value, doskeyList, currentDirectory)
                                 break
