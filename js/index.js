@@ -63,16 +63,6 @@ function everything() {
 
         function validator() {
 
-            // const validURL = (str) => {
-            //     let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-            //         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-            //         '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-            //         '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-            //         '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-            //         '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-            //     return !!pattern.test(str);
-            // }
-
             let randomNum = (Math.random() * 4) * 1000;
 
             input.disabled = true;
@@ -81,8 +71,10 @@ function everything() {
 
             const argumentSplit = value.split(" ")
             
-            if (value === "cd") {
+            if (value.toLowerCase() === "cd") {
                 println(value, currentDirectory, currentDirectory, 0)
+            } else if (value.toLowerCase() === "exit"){
+                window.close()
             } else if(value.toLowerCase() === "doskey") {
                 println(value, "", currentDirectory, randomNum)
             } else if (value.toLowerCase() === "download firefox"){
@@ -123,6 +115,9 @@ function everything() {
             } else {
                 switch (argumentSplit[0].toLowerCase()) {
                     case "port": {
+                        if (typeof argumentSplit[1] === "string") {
+                            argumentSplit[1] = argumentSplit[1].toLowerCase()
+                        }
                         switch (argumentSplit[1]) {
                             case "help": {
                                 println(value, helpString, currentDirectory, randomNum);
