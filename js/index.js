@@ -235,18 +235,18 @@ function everything() {
                             println(value, "\'index.html\. was not recognized", currentDirectory, randomNum)
                         }
                         break
-                    } case "favicon.jpg": {
+                    } case "favicon.png": {
                         if (currentDirectory === "praantosamadder.github.io/about ") {
                             println(value, "", currentDirectory, randomNum)
-                            window.open("https://raw.githubusercontent.com/praantosamadder/praantosamadder.github.io/master/favicon.jpg")
+                            window.open("https://praantosamadder.github.io/favicon.png")
                         } else {
-                            println(value, "\'favicon.jpg\. was not recognized", currentDirectory, randomNum)
+                            println(value, "\'favicon.png\. was not recognized", currentDirectory, randomNum)
                         }
                         break
                     } case "index.js" : {
                         if (currentDirectory === "praantosamadder.github.io/js ") {
                             println(value, "", currentDirectory, randomNum)
-                            window.open("https://raw.githubusercontent.com/praantosamadder/praantosamadder.github.io/master/js/index.js")
+                            window.open("https://praantosamadder.github.io/js/index.js")
                         } else {
                             println(value, "\'index.js\. was not recognized", currentDirectory, randomNum)
                         }
@@ -306,7 +306,7 @@ function everything() {
                     } case "index.css" : {
                         if (currentDirectory === "praantosamadder.github.io/css ") {
                             println(value, "", currentDirectory, randomNum)
-                            window.open("https://raw.githubusercontent.com/praantosamadder/praantosamadder.github.io/master/css/index.css")
+                            window.open("https://praantosamadder.github.io/css/index.css")
                         } else {
                             println(value, "\'index.css\. was not recognized", currentDirectory, randomNum)
                         }
@@ -580,7 +580,7 @@ function everything() {
                 addTableData(fontTableRow, currentTime)
                 addTableData(fontTableRow, "")
                 addTableData(fontTableRow, "21,732")
-                addTableData(fontTableRow, "favicon.jpg")
+                addTableData(fontTableRow, "favicon.png")
 
                 let tableRow4 = document.createElement("tr");
                 addTableData(tableRow4, currentDate)
@@ -926,9 +926,9 @@ function everything() {
                 let tableRow5 = document.createElement("tr");
                 addTableData(tableRow5, currentDate)
                 addTableData(tableRow5, currentTime)
-                addTableData(tableRow5, "<DIR>")
                 addTableData(tableRow5, "")
-                addTableData(tableRow5, "fonts")
+                addTableData(tableRow5, "957")
+                addTableData(tableRow5, "audio.html")
 
                 let tableRow6 = document.createElement("tr");
                 addTableData(tableRow6, currentDate)
@@ -945,7 +945,7 @@ function everything() {
                 addTableData(tableRow7, "1,784")
                 addTableData(tableRow7, "table.html")
 
-                table.append(tableRow1, tableRow2, tableRow6, tableRow7)
+                table.append(tableRow1, tableRow2, tableRow5, tableRow6, tableRow7)
 
                 p2.append(dirDet, table)
 
