@@ -50,7 +50,9 @@ function everything() {
         input.addEventListener("keydown", function (e) {
             if (e.key.toLowerCase() === "enter") {
                 e.preventDefault();
-                doskeyList.push(input.value)
+                if (input.value !== doskeyList[doskeyList.length - 1]) {
+                    doskeyList.push(input.value)
+                }
                 validator();
                 input.value = "";
             } else if (e.key.toLowerCase() === "c" && e.ctrlKey){
@@ -73,6 +75,10 @@ function everything() {
 
             let value = input.value
             let v1 = value.toLowerCase()
+
+            if (v1 === "ls"){
+                v1 = "dir"
+            }
 
             const argumentSplit = v1.split(" ")
             
